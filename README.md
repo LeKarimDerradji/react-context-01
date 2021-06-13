@@ -3,19 +3,22 @@
 We first begin by creating a context object called ThemeContext, to keep it simple, the values of that Context will only contain style 
 variables : 
 
-```// src/ThemeContext.js
+```javascript
+// src/ThemeContext.js
  
 import React from 'react';
  
 const ThemeContext = React.createContext(null);
  
-export default ThemeContext;```
+export default ThemeContext;
+```
 
 
 Then, we declare a provider, that can be wrapped around all top-level components.
 All the components bellow this top-level one, will be able to use the ThemeContext-Context, (so all of its content)
 
-```// src/ComponentA.js
+```js
+// src/ComponentA.js
  
 import React from 'react';
 import ThemeContext from './ThemeContext';
@@ -24,7 +27,8 @@ const App = () => (
   <ThemeContext.Provider value="green">
     <Child />
   </ThemeContext.Provider>
-);```
+);
+```
 
 We then create a grand-child : 
 
@@ -34,7 +38,7 @@ App
 
 To show that our value from the App's provider, can be consumed everywhere. 
 
-```
+```js
 const GrandChild = () => {
 
     return (
@@ -49,7 +53,7 @@ export default GrandChild
 Finally, we import the useContext HOOKS from react, useContext uses any Object, and retrieve the most recent value passed trought it, 
 we have to bind it to a variable in order to use that value then : 
 
-```
+```js
 import {useContext} from 'react'
 import ThemeContext from '../ThemeContext'
 
