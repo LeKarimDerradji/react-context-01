@@ -32,9 +32,9 @@ const App = () => (
 
 We then create a grand-child : 
 
-App 
----Child
---------GrandChild
+1. App
+  2. Child
+     3. Grand-Child
 
 To show that our value from the App's provider, can be consumed everywhere. 
 
